@@ -1,6 +1,6 @@
-# Portafolio — Daniel Fernández Botero
+# Portafolio — Daniel Alberto Fernández Botero
 
-Sitio personal de **Daniel Fernández Botero**, desarrollador Full Stack e ingeniero de sistemas en Cartagena, Colombia. Una sola página estática, sin frameworks ni build: HTML, CSS y JavaScript puro, publicada en GitHub Pages.
+Sitio personal de **Daniel Alberto Fernández Botero**, desarrollador Full Stack e ingeniero de sistemas en Cartagena, Colombia. Una sola página estática, sin frameworks ni build: HTML, CSS y JavaScript puro, publicada en GitHub Pages.
 
 [![Demo en vivo](https://img.shields.io/badge/demo-en%20vivo-c9f27c?style=for-the-badge&labelColor=101a2b)](https://danielfernandezb.github.io/portafolio-daniel/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=101a2b)](#)
@@ -64,5 +64,5 @@ portafolio-daniel/
 
 ## Autor
 
-**Daniel Fernández Botero** — Desarrollador Full Stack · Ingeniero de Sistemas
+**Daniel Alberto Fernández Botero** — Desarrollador Full Stack · Ingeniero de Sistemas
 Cartagena, Colombia · [LinkedIn](https://www.linkedin.com/in/daniel-fern%C3%A1ndez-100552263/) · [GitHub](https://github.com/danielfernandezb)

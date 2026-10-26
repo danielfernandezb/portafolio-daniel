@@ -19,7 +19,7 @@ Sitio personal de **Daniel Fernández Botero**, desarrollador Full Stack e ingen
 | Proyectos | Casos reales con enlace al sitio en producción |
 | Perfil | Trayectoria, formación y datos de contacto profesionales |
 | Tecnologías | Shopify, React, Angular, SQL, VPS, Python y más |
-| Experiencia | Línea de tiempo 2020 — actualidad |
+| Experiencia | Línea de tiempo 2020 — 2026 |
 | Contacto | LinkedIn, GitHub y teléfono |
 
 ## Proyectos enlazados

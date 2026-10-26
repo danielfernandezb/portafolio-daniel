@@ -1,0 +1,72 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Validar el sitio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comprobar metadatos del documento
+        run: |
+          test -f index.html || { echo "::error::Falta index.html"; exit 1; }
+          grep -q "<title>" index.html || { echo "::error::Falta <title>"; exit 1; }
+          grep -q 'name="description"' index.html || { echo "::error::Falta meta description"; exit 1; }
+          grep -q 'name="viewport"' index.html || { echo "::error::Falta meta viewport"; exit 1; }
+          grep -q 'lang="es"' index.html || { echo "::error::Falta lang en <html>"; exit 1; }
+          echo "Metadatos OK"
+
+      - name: Comprobar anclas internas
+        run: |
+          for id in $(grep -oE 'href="#[a-zA-Z0-9_-]+"' index.html | sed 's/href="#//;s/"//' | sort -u); do
+            if ! grep -q "id=\"$id\"" index.html; then
+              echo "::error::Ancla rota: #$id"
+              exit 1
+            fi
+          done
+          echo "Todas las anclas existen"
+
+      - name: Comprobar peso del HTML
+        run: |
+          SIZE=$(stat -c%s index.html)
+          echo "index.html: $((SIZE / 1024)) KB"
+          if [ "$SIZE" -gt 204800 ]; then
+            echo "::error::index.html supera 200 KB"
+            exit 1
+          fi
+
+      - name: Preparar artefacto
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+
+      - name: Empaquetar sitio
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Publicar
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -25,6 +25,7 @@ Sitio personal de **Daniel Alberto Fernández Botero**, desarrollador Full Stack
 
 ## Proyectos enlazados
 
+- [Supreme Shop CTG](https://paleturquoise-llama-938112.hostingersite.com/) — tema a medida para WordPress y WooCommerce · [Código](https://github.com/danielfernandezb/supreme-shop-ctg)
 - [Melissa Oficial](https://melissaoficial.com.co/) — e-commerce Shopify
 - [Route Store CTG](https://routestorectg.com/) — e-commerce Shopify
 - [Sandalias Colombia](https://sandaliascolombia.com.co/) — e-commerce multimarca
@@ -52,6 +53,7 @@ python -m http.server 8000
 ```
 portafolio-daniel/
 ├── index.html   # Todo el sitio: estilos, contenido y script
+├── assets/      # Capturas de los proyectos
 └── README.md
 ```
 
